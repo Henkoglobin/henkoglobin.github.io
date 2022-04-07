@@ -29,22 +29,22 @@ import groovy.json.JsonSlurper
 import groovy.json.JsonException
 
 class AssertionUtilities {
-    Logger log
-    Object context
-    TestCaseRunner testRunner
-    JsonSlurper jsonSlurper
+	Logger log
+	Object context
+	TestCaseRunner testRunner
+	JsonSlurper jsonSlurper
 
-    def AssertionUtilities(Logger log, Object context, TestCaseRunner testRunner) {
-        this.log = log
-        this.context = context
-        this.testRunner = testRunner
+	def AssertionUtilities(Logger log, Object context, TestCaseRunner testRunner) {
+		this.log = log
+		this.context = context
+		this.testRunner = testRunner
 
 		this.jsonSlurper = new JsonSlurper()
-    }
+	}
 
-    def createAssertionsForTestCase() {
-        log.info("dummy")
-    }
+	def createAssertionsForTestCase() {
+		log.info("dummy")
+	}
 }
 
 context.assertions = new AssertionUtilities(log, context, testRunner)
@@ -76,8 +76,8 @@ Zum Start ein kurzer Refresher zur Terminologie: Schnittstellen-Tests bilden in 
 
 - Projekt
   - Test Suite
-    - Test Case
-      - Test Step
+	- Test Case
+	  - Test Step
 
 Der _Test Case_ kann dabei theoretisch alles mögliche sein: Ein fachlicher Testfall (etwa ein "Passwort zurücksetzen"-Flow) mit mehreren aufeinander aufbauenden Schritten ist ebenso denkbar wie eine Liste nicht zusammenhängender Tests mit unterschiedlichen Eingabedaten. Ein Test Case kann aus einer beliebigen Kombination von _Test Steps_ bestehen, beispielsweise könnte ein _JDBC Request_ zunächst einen definierten Zustand in einer Datenbank herstellen; ein _REST Request_ führt dann eine Aktion aus, ein _Property Transfer_ überträgt einen Teil der Antwort (etwa eine ID) in einen zweiten _REST Request_ und zum Abschluss wird per _JDBC Request_ wieder der Ausgangszustand wiederhergestellt.
 
@@ -91,34 +91,34 @@ Zum Abschluss prüfen wir, ob es sich beim aktuellen Testschritt um einen `RestT
 
 ```groovy
 def createAssertionsForTestCase() {
-    for(step in testRunner.testCase.testStepList) {
-        if(step.disabled) {
-            continue
-        }
+	for(step in testRunner.testCase.testStepList) {
+		if(step.disabled) {
+			continue
+		}
 
-        step.run(testRunner, context)
+		step.run(testRunner, context)
 
-        // Nur für Rest Request Steps wollen wir Assertions generieren
-        if(step instanceof RestTestRequestStep) {
-            def response = step.httpRequest.response
+		// Nur für Rest Request Steps wollen wir Assertions generieren
+		if(step instanceof RestTestRequestStep) {
+			def response = step.httpRequest.response
 
-            log.info("[${step.label}] Assertions werden erzeugt...")
-            createHttpStatusAssertion(step, response.statusCode)
-            createContentAssertions(step, response.responseContent)
+			log.info("[${step.label}] Assertions werden erzeugt...")
+			createHttpStatusAssertion(step, response.statusCode)
+			createContentAssertions(step, response.responseContent)
 
-            log.info("[${step.label}] Assertions erfolgreich erzeugt.")
-        }
-    }
+			log.info("[${step.label}] Assertions erfolgreich erzeugt.")
+		}
+	}
 }
 
 def createContentAssertions(step, responseContent) {
-    try {
-        def data = jsonSlurper.parseText(responseContent)
-        generateAssertionsForValue(step, "\$", data)
-    } catch(JsonException e) {
-        testRunner.fail("${step.label} hat kein JSON geliefert; fehlt ein Accept-Header?")
-        log.info(e.message)
-    }
+	try {
+		def data = jsonSlurper.parseText(responseContent)
+		generateAssertionsForValue(step, "\$", data)
+	} catch(JsonException e) {
+		testRunner.fail("${step.label} hat kein JSON geliefert; fehlt ein Accept-Header?")
+		log.info(e.message)
+	}
 }
 ```
 
@@ -128,18 +128,18 @@ Einem Test Step Assertions hinzuzufügen passiert über die Methode `addAssertio
 
 ```groovy
 def createHttpStatusAssertion(step, statusCode) {
-    def name = ":status = $statusCode"
+	def name = ":status = $statusCode"
 
-    // Die Namen von Assertions müssen innerhalb eines Testschritts immer eindeutig sein; zudem wollen wir verhindern, dass mehrfache Aufrufe unseres Scripts (etwa, nachdem neue Felder hinzugefügt wurden) Duplikate bestehender Assertions anlegen
-    if(step.getAssertionByName(name) == null) {
-        log.debug("Erstelle $name")
+	// Die Namen von Assertions müssen innerhalb eines Testschritts immer eindeutig sein; zudem wollen wir verhindern, dass mehrfache Aufrufe unseres Scripts (etwa, nachdem neue Felder hinzugefügt wurden) Duplikate bestehender Assertions anlegen
+	if(step.getAssertionByName(name) == null) {
+		log.debug("Erstelle $name")
 
-        def assertion = step.addAssertion("Valid HTTP Status Codes")
-        assertion.name = name
-        assertion.codes = statusCode
-    } else {
-        log.info("Überspringe $name, da sie bereits existiert")
-    }
+		def assertion = step.addAssertion("Valid HTTP Status Codes")
+		assertion.name = name
+		assertion.codes = statusCode
+	} else {
+		log.info("Überspringe $name, da sie bereits existiert")
+	}
 }
 ```
 
@@ -155,10 +155,10 @@ Um nun alle Felder unserer Antwort zu validieren, müssen wir zunächst durch di
 > ```json
 > {
 >   "employees": [
->       {
->           "id": 123,
->           "name": "Max Mustermann"
->       }
+>	   {
+>		   "id": 123,
+>		   "name": "Max Mustermann"
+>	   }
 >   ]
 > }
 > ```
@@ -167,40 +167,40 @@ Zunächst prüfen wir den konkreten Typen des aktuellen Werts. Da wir mit einem 
 
 ```groovy
 def generateAssertionsForValue(step, path, value) {
-    if(value instanceof List) {
-        return generateAssertionsForList(step, path, value)
-    } else if(value instanceof Map) {
-        return generateAssertionsForMap(step, path, value)
-    } else {
-        return createJsonPathContentAssertion(step, path, value)
-    }
+	if(value instanceof List) {
+		return generateAssertionsForList(step, path, value)
+	} else if(value instanceof Map) {
+		return generateAssertionsForMap(step, path, value)
+	} else {
+		return createJsonPathContentAssertion(step, path, value)
+	}
 }
 
 def generateAssertionsForList(step, path, list) {
-    list.eachWithIndex { entry, i ->
-        generateAssertionsForValue(step, "$path[$i]", entry)
-    }
+	list.eachWithIndex { entry, i ->
+		generateAssertionsForValue(step, "$path[$i]", entry)
+	}
 }
 
 def generateAssertionsForMap(step, path, map) {
-    for(entry in map) {
-        generateAssertionsForValue(step, "$path['${entry.key}']", entry.value)
-    }
+	for(entry in map) {
+		generateAssertionsForValue(step, "$path['${entry.key}']", entry.value)
+	}
 }
 
 def createJsonPathContentAssertion(step, path, value) {
-    def name = "$path = $value"
+	def name = "$path = $value"
 
-    if(step.getAssertionByName(name) == null) {
-        log.debug("Erstelle $name")
+	if(step.getAssertionByName(name) == null) {
+		log.debug("Erstelle $name")
 
-        def assertion = step.addAssertion("JsonPath Match")
-        assertion.name = name
-        assertion.path = path
-        assertion.expectedContent = value != null ? value : "null"
-    } else {
-        log.info("Überspringe $name, da sie bereits existiert")
-    }
+		def assertion = step.addAssertion("JsonPath Match")
+		assertion.name = name
+		assertion.path = path
+		assertion.expectedContent = value != null ? value : "null"
+	} else {
+		log.info("Überspringe $name, da sie bereits existiert")
+	}
 }
 ```
 
