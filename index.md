@@ -1,4 +1,4 @@
-[German Version](de/)
+# henkoglobin.github.io
 
 ## [SoapUI-Scripting mit Groovy](de/2022-04-07_SoapUI-Scripting.md)
 
