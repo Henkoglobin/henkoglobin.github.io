@@ -1,1 +1,1 @@
-Hey there!
+[German Version](de/)
