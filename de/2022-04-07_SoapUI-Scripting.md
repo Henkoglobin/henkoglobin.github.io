@@ -8,6 +8,8 @@ In einem unserer Projekte haben wir Groovy-Scripte intensiv genutzt, um automati
 
 > Solche _Snapshots_ von Schnittstellen-Daten können natürlich auch in allgemeineren Szenarien nützlich sein; auch bei der Weiterentwicklung von Services kann es nützlich sein, zu verifizieren, dass nicht versehentlich andere Felder der Antworten verändert worden sind. Für _veränderliche_ Daten sind Snapshot-Vergleiche selbstverständlich nicht geeignet; sofern nur bestimmte Felder veränderlich sind, können diese über eine Blockliste ausgeschlossen werden.
 
+Dieser Artikel präsentiert eine "abgespeckte" Version des fertigen Scripts, die als Grundlage für weitere Entwicklungen dienen kann. Keine Angst: Wer Erfahrung mit Java oder Kotlin hat, wird sich in Groovy schnell zurechtfinden und hat bereits die richtigen Instinkte.
+
 ## Groovy-Scripte anlegen
 
 Leider stellt es sich als etwas umständlich heraus, Code _wiederverwertbar_ in SoapUI Test-Suiten zu hinterlegen. Glücklicherweise gibt es einen [etwas ungewöhnlichen Weg](https://blog.sysco.no/testing/scriptlibrary-in-soapui/#using-shared-library), um Codeteile auszulagern und an anderer Stelle einzubinden.
@@ -64,7 +66,28 @@ if(context.assertions == null) {
 context.assertions.createAssertionsForTestCase()
 ```
 
-Die Aufgabe von `createAssertionsForTestCase` wird es zunächst sein, alle _anderen_ Steps des Eltern _Test Case_ des Groovy-Scripts zu durchlaufen. Wir können an dieser Stelle auf unterschiedliche Arten von _Test Steps_ reagieren, beispielsweise könnten wir eine gesonderte Behandlung von _JDBC Request_- und _Property Transfer_-Steps implementieren oder Generierung von Assertions für _REST Request_-Steps gegen bestimmte Services (beispielsweise einen Login-Service) unterdrücken. In unserem Fall ist die Logik vergleichsweise einfach: Ist ein _Test Step_ deaktiviert, wird er übersprungen, ansonsten wird er ausgeführt. Handelt es sich um einen `RestTestRequestStep`, so werden aus dem Ergebnis anschließend Assertions generiert: 
+Die finale Struktur unseres Testprojektes sollte nun in etwa so aussehen; zu beachten sind insbesondere der deaktivierte Testfall `groovy` sowie der deaktivierte Testschritt `Assertions generieren`.
+
+![Struktur](2022-04-07_SoapUI-Scripting/Project.png)
+
+## Testfälle und -schritte ausführen
+
+Zum Start ein kurzer Refresher zur Terminologie: Schnittstellen-Tests bilden in SoapUI eine Baumstruktur bestehend aus folgenden Ebenen:
+
+- Projekt
+  - Test Suite
+    - Test Case
+      - Test Step
+
+Der _Test Case_ kann dabei theoretisch alles mögliche sein: Ein fachlicher Testfall (etwa ein "Passwort zurücksetzen"-Flow) mit mehreren aufeinander aufbauenden Schritten ist ebenso denkbar wie eine Liste nicht zusammenhängender Tests mit unterschiedlichen Eingabedaten. Ein Test Case kann aus einer beliebigen Kombination von _Test Steps_ bestehen, beispielsweise könnte ein _JDBC Request_ zunächst einen definierten Zustand in einer Datenbank herstellen; ein _REST Request_ führt dann eine Aktion aus, ein _Property Transfer_ überträgt einen Teil der Antwort (etwa eine ID) in einen zweiten _REST Request_ und zum Abschluss wird per _JDBC Request_ wieder der Ausgangszustand wiederhergestellt.
+
+Die Aufgabe unserer Funktion `createAssertionsForTestCase` wird es zunächst sein, alle Steps des übergeordneten _Test Case_ des Groovy-Scripts zu durchlaufen. Wir können an dieser Stelle auf unterschiedliche Arten von _Test Steps_ reagieren, beispielsweise könnten wir eine gesonderte Behandlung von _JDBC Request_- und _Property Transfer_-Steps implementieren oder die Generierung von Assertions für _REST Request_-Steps gegen bestimmte Services (beispielsweise einen Login-Service) unterdrücken. In unserem Fall ist die Logik vergleichsweise einfach: Ist ein _Test Step_ deaktiviert, wird er übersprungen, ansonsten wird er ausgeführt.
+
+Der `TestCaseRunner`, den wir im Konstruktor unserer `AssertionUtilities`-Klasse übergeben haben (und der wiederum vom jeweils ausgeführten _Test Case_ befüllt wird) bietet uns bereits Zugriff auf den aktuellen `TestCase` (über die `testCase`-Property), auf dessen Kind-Elemente (die einzelnen Testschritte für einen Testfall) können wir wiederum per `testStepList`-Property zugreifen.
+
+Auch einen Testschritt auszuführen ist denkbar einfach: Wir rufen die `run`-Methode des Schritts auf und übergeben unseren `TestCaseRunner` und den `context`.
+
+Zum Abschluss prüfen wir, ob es sich beim aktuellen Testschritt um einen `RestTestRequestStep` handelt: Nur dann werden anschließend auch Assertions generiert. 
 
 ```groovy
 def createAssertionsForTestCase() {
@@ -134,10 +157,8 @@ Um nun alle Felder unserer Antwort zu validieren, müssen wir zunächst durch di
 >   "employees": [
 >       {
 >           "id": 123,
->           "name": "Max Mustermann",
->           ...
->       },
->       ...
+>           "name": "Max Mustermann"
+>       }
 >   ]
 > }
 > ```
@@ -183,9 +204,11 @@ def createJsonPathContentAssertion(step, path, value) {
 }
 ```
 
+An dieser Stelle haben wir bereits ein funktionierendes Framework, um unsere Assertions komplett automatisiert zu erzeugen.
+
 ## Fazit und Ausblick
 
-An dieser Stelle haben wir bereits ein funktionierendes Framework, um unsere Assertions komplett automatisiert zu erzeugen. Obwohl die API von SoapUI mitunter gewöhnungsbedürftig ist, waren wir dank Groovy in der Lage, mit überschaubarem Aufwand eine solide Grundlage aufzubauen.
+Obwohl die API von SoapUI mitunter gewöhnungsbedürftig ist, waren wir dank Groovy in der Lage, mit überschaubarem Aufwand eine solide Grundlage aufzubauen und haben die Grundlagen des Scriptings mit Groovy kennengelernt. 
 
 Im weiteren Verlauf kann es nun hilfreich sein, weitere Features umzusetzen:
 

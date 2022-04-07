@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="8eec202a-d712-458e-9d00-22af55517a6d" activeEnvironment="Default" name="REST Project 1" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="8eec202a-d712-458e-9d00-22af55517a6d" activeEnvironment="Default" name="SoapUI-Scripting" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
   <con:settings/>
   <con:interface xsi:type="con:RestService" id="1701a8bc-a6c3-445d-bc4c-bb8d34deed61" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://api.github.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
@@ -7,7 +7,7 @@
     <con:endpoints>
       <con:endpoint>https://api.github.com</con:endpoint>
     </con:endpoints>
-    <con:resource name="/" path="" id="d9d84a8c-863f-4e7b-a957-2a6eba22676c">
+    <con:resource name="/" path="/" id="d9d84a8c-863f-4e7b-a957-2a6eba22676c">
       <con:settings/>
       <con:parameters/>
       <con:resource name="zen" path="zen" id="945effa9-8dbf-4f31-94ec-5e94f218b6fc">
@@ -38,7 +38,7 @@
           </con:request>
         </con:method>
       </con:resource>
-      <con:resource name="users" path="/users" id="f37524f8-fbed-4dc4-a0fd-cb97238de751">
+      <con:resource name="users" path="users" id="f37524f8-fbed-4dc4-a0fd-cb97238de751">
         <con:settings/>
         <con:parameters/>
         <con:resource name="{name}" path="{name}" id="023f05ed-377a-402e-a6ca-32a68ef4126e">
@@ -148,7 +148,7 @@
             <con:jmsPropertyConfig/>
             <con:parameters>
               <con:entry key="owner" value="Henkoglobin"/>
-              <con:entry key="repo" value="x"/>
+              <con:entry key="repo" value="lazylualinq"/>
             </con:parameters>
           </con:request>
         </con:method>
