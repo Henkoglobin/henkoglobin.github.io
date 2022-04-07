@@ -1,3 +1,5 @@
+[de](../) > SoapUI-Scripting mit Groovy
+
 # SoapUI-Scripting mit Groovy
 
 Allein der Name [SoapUI](https://www.soapui.org/) lässt wohl so manchen Entwickler bereits schaudern, schließlich nutzen heutzutage die meisten Schnittstellen doch eher auf REST und JSON statt auf [SOAP](https://de.wikipedia.org/wiki/SOAP) und XML auf. In der Tat lässt sich SoapUI ähnlich wie etwa Postman jedoch auch nutzen, um REST-Schnittstellen aufzurufen und zu testen.
