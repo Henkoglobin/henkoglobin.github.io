@@ -1,6 +1,6 @@
 # SoapUI-Scripting mit Groovy
 
-Allein der Name [SoapUI](https://www.soapui.org/) lässt wohl so manchen Entwickler bereits schaudern, schließlich nutzen heutzutage die meisten Schnittstellen doch eher auf REST und JSON statt auf [SOAP](https://de.wikipedia.org/wiki/SOAP) und XML auf. In der Tat lässt sich SoapUI ähnlich wie etwa Postman jedoch auch nutzen, um REST-Schnittstellen aufzurufen und zu testen.
+Allein der Name [SoapUI](https://www.soapui.org/) lässt wohl so manchen Entwickler bereits schaudern, schließlich bauen heutzutage die meisten Schnittstellen doch eher auf REST und JSON statt auf [SOAP](https://de.wikipedia.org/wiki/SOAP) und XML auf. In der Tat lässt sich SoapUI ähnlich wie etwa Postman jedoch auch nutzen, um REST-Schnittstellen aufzurufen und zu testen.
 
 Ein großer Vorteil von SoapUI ist seine Erweiterbarkeit durch Groovy-Scripte. Diese können etwa genutzt werden, um Tests zu unterstützen (beispielsweise als Setup- und Teardown-Scripte) oder um das Verhalten von Mocks zu definieren.
 
@@ -53,6 +53,8 @@ context.assertions = new AssertionUtilities(log, context, testRunner)
 > Hinweis: Die JavaDocs zu SoapUI-Klassen sind leider recht unübersichtlich gestaltet, daher ist es häufig hilfreich, sich Details zu Objekten über die `.class` - eventuell unter Zuhilfenahme von Reflection - ausgeben zu lassen. Da der Code-Editor von SoapUI leider auch keine Unterstützung bietet, ist auch die Angabe von Typen wenig hilfreich (und in Groovy ohnehin optional). Ist der Typname bekannt, können die verfügbaren Methoden jedoch in der Regel über die Online-JavaDocs eingesehen werden, beispielsweise für [TestCaseRunner](https://www.soapui.org/apidocs/soapui/DefaultPackage/MockTestRunner.html). Im Rest des Artikels werden wir größtenteils darauf verzichten, Typen zu spezifizieren.
 
 Die tatsächlichen Testfälle können anschließend ebenfalls als _Test Cases_ und _Test Steps_ angelegt werden. Jeder _Test Case_ wird dann einen zusätzlichen (wiederum deaktivierten) Groovy _Test Step_ enthalten, der dafür zuständig ist, die gewünschten Assertions zu generieren. Diese Steps sehen alle sehr ähnlich aus: Sie importieren zunächst den gemeinsam genutzten Code und rufen anschließend nur die Funktion `createAssertionsForTestCase` auf, der wir in späteren Artikeln noch Parameter geben werden, die die genaue Ausgestaltung der Assertions kontrollieren.
+
+Es ist wichtig, den jeweiligen _Test Step_ zu deaktivieren, damit er tatsächlich nur **manuell ausgeführt** werden kann; ansonsten würden die Assertions der anderen _Test Steps_ bei jedem Ausführen der _Test Cases_ neu generiert - im besten Falle kostet dies lediglich etwas Zeit, im schlechtesten Falle können dadurch jedoch Fehler unentdeckt bleiben. Deaktivierte _Test Steps_ werden bei der Ausführung eines kompletten _Test Case_ oder sogar der kompletten _Test Suite_ ignoriert, lassen sich aber über den grünen Pfeil im Script-Editor regulär ausführen.
 
 ```groovy
 // Library importieren, via https://blog.sysco.no/testing/scriptlibrary-in-soapui/
