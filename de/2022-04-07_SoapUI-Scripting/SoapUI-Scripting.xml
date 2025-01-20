@@ -1,0 +1,2316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8eec202a-d712-458e-9d00-22af55517a6d" activeEnvironment="Default" name="SoapUI-Scripting" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="1701a8bc-a6c3-445d-bc4c-bb8d34deed61" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://api.github.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache/>
+    <con:endpoints>
+      <con:endpoint>https://api.github.com</con:endpoint>
+    </con:endpoints>
+    <con:resource name="/" path="/" id="d9d84a8c-863f-4e7b-a957-2a6eba22676c">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="zen" path="zen" id="945effa9-8dbf-4f31-94ec-5e94f218b6fc">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="GET /zen" id="8e34e6d4-370a-411d-9daa-d035d7a7beca" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>text/plain;charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element>data</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="aa61b8e1-b58a-4893-9783-15be0c8a80ec" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://api.github.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://api.github.com/zen</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="users" path="users" id="f37524f8-fbed-4dc4-a0fd-cb97238de751">
+        <con:settings/>
+        <con:parameters/>
+        <con:resource name="{name}" path="{name}" id="023f05ed-377a-402e-a6ca-32a68ef4126e">
+          <con:settings/>
+          <con:parameters>
+            <con:parameter>
+              <con:name>name</con:name>
+              <con:value/>
+              <con:style>TEMPLATE</con:style>
+              <con:default/>
+            </con:parameter>
+          </con:parameters>
+          <con:method name="Method 1" id="cdc52f4a-3a3d-47cb-96ea-1f329fa24580" method="GET">
+            <con:settings/>
+            <con:parameters/>
+            <con:representation type="RESPONSE">
+              <con:mediaType>application/json; charset=utf-8</con:mediaType>
+              <con:status>200</con:status>
+              <con:params/>
+              <con:element xmlns:hen="https://api.github.com/users/Henkoglobin">hen:Response</con:element>
+            </con:representation>
+            <con:request name="Request 1" id="3114c5b6-31a4-4b06-961a-8eff4c12633e" mediaType="application/json">
+              <con:settings>
+                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+              </con:settings>
+              <con:endpoint>https://api.github.com</con:endpoint>
+              <con:request/>
+              <con:originalUri>https://api.github.com/users/Henkoglobin</con:originalUri>
+              <con:credentials>
+                <con:authType>No Authorization</con:authType>
+              </con:credentials>
+              <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+              <con:jmsPropertyConfig/>
+              <con:parameters>
+                <entry key="name" value="Henkoglobin" xmlns="http://eviware.com/soapui/config"/>
+              </con:parameters>
+            </con:request>
+          </con:method>
+        </con:resource>
+        <con:method name="Method 1" id="660f7e10-55b1-49b5-b168-33673b17db2c" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="59b4dc76-9a5d-414e-aca3-99f0e7f70de4" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://api.github.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://api.github.com/users</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{repo}" path="repos/{owner}/{repo}" id="c7308194-2d3d-491c-881a-7d35c6e429e2">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>owner</con:name>
+            <con:value>owner</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>owner</con:default>
+          </con:parameter>
+          <con:parameter>
+            <con:name>repo</con:name>
+            <con:value>repo</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>repo</con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Method 1" id="ab0ddcbe-26ab-437b-90c7-b9e5fea9aeb8" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params/>
+            <con:element xmlns:hen="https://api.github.com/repos/Henkoglobin/">hen:Fault</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:hen="https://api.github.com/repos/Henkoglobin/">hen:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="a6b0051e-3736-4582-857f-92cc627f54c6" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://api.github.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://api.github.com/repos/Henkoglobin/</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="owner" value="Henkoglobin"/>
+              <con:entry key="repo" value="lazylualinq"/>
+            </con:parameters>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="GET /" id="acad6f0e-5b19-4ed5-a227-8e8a31b68c2c" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:api="https://api.github.com/">api:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="135912e3-c6f4-43c4-8709-947ab1587a90" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://api.github.com</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://api.github.com/</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="bd32f7cc-cce1-4e5e-8d8a-3acee3446ee9" name="Generated Tests">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="098c4169-fe73-456c-8582-9e660858e1f8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="groovy" searchProperties="true" disabled="true">
+      <con:settings/>
+      <con:testStep type="groovy" name="assertions" id="1926ca21-0ab7-4bbc-8bca-cbe7ce16a767">
+        <con:settings/>
+        <con:config>
+          <script>import org.apache.logging.log4j.core.Logger
+import com.eviware.soapui.model.testsuite.TestCaseRunner
+
+// Diese Imports werden wir später noch benötigen
+import com.eviware.soapui.impl.wsdl.teststeps.RestTestRequestStep
+import com.eviware.soapui.impl.wsdl.teststeps.PropertyTransfersTestStep
+import com.eviware.soapui.impl.wsdl.teststeps.JdbcRequestTestStep
+
+import groovy.json.JsonSlurper
+import groovy.json.JsonException
+
+class AssertionUtilities {
+	Logger log
+	Object context
+	TestCaseRunner testRunner
+	JsonSlurper jsonSlurper
+
+	def AssertionUtilities(Logger log, Object context, TestCaseRunner testRunner) {
+		this.log = log
+		this.context = context
+		this.testRunner = testRunner
+		
+		this.jsonSlurper = new JsonSlurper()
+   }
+
+	def createAssertionsForTestCase() {
+		for(step in testRunner.testCase.testStepList) {
+			if(step.disabled) {
+				log.info("[${step.label}] Step ist deaktiviert.")
+				continue
+			}
+	
+			step.run(testRunner, context)
+	
+			// Nur für Rest Request Steps wollen wir Assertions generieren
+			if(step instanceof RestTestRequestStep) {
+				def response = step.httpRequest.response
+	
+				log.info("[${step.label}] Assertions werden erzeugt...")
+				createHttpStatusAssertion(step, response.statusCode)
+				createContentAssertions(step, response.responseContent)
+	               log.info("[${step.label}] Assertions erfolgreich erzeugt.")
+			}
+		}
+	}
+
+	def createContentAssertions(step, responseContent) {
+		try {
+			def data = jsonSlurper.parseText(responseContent)
+			generateAssertionsForValue(step, "\$", data)
+		} catch(JsonException e) {
+			testRunner.fail("${step.label} hat kein JSON geliefert; fehlt ein Accept-Header?")
+			log.info(e.message)
+		}
+	}
+
+	def createHttpStatusAssertion(step, statusCode) {
+		def name = ":status = $statusCode"
+	
+		// Die Namen von Assertions müssen innerhalb eines Testschritts immer eindeutig sein; zudem wollen wir verhindern, dass mehrfache Aufrufe unseres Scripts (etwa, nachdem neue Felder hinzugefügt wurden) Duplikate bestehender Assertions anlegen
+		if(step.getAssertionByName(name) == null) {
+			log.debug("Erstelle $name")
+	
+			def assertion = step.addAssertion("Valid HTTP Status Codes")
+			assertion.name = name
+			assertion.codes = statusCode
+		} else {
+			log.info("Überspringe $name, da sie bereits existiert")
+		}
+	}
+
+	def generateAssertionsForValue(step, path, value) {
+	    if(value instanceof List) {
+	        return generateAssertionsForList(step, path, value)
+	    } else if(value instanceof Map) {
+	        return generateAssertionsForMap(step, path, value)
+	    } else {
+	        return createJsonPathContentAssertion(step, path, value)
+	    }
+	}
+
+	def generateAssertionsForList(step, path, list) {
+	    list.eachWithIndex { entry, i ->
+	        generateAssertionsForValue(step, "$path[$i]", entry)
+	    }
+	}
+
+	def generateAssertionsForMap(step, path, map) {
+	    for(entry in map) {
+	        generateAssertionsForValue(step, mapIndexer(path, entry.key), entry.value)
+	    }
+	}
+	
+	// mapIndexer gibt einen möglichst simplen Pfad zurück, der aus der Map am Pfad path das Element mit Key next selektiert. Wenn der Key dabei nicht wie ein Bezeichner aussieht (also bspw. Leerzeichen enthält), muss die Map-Syntax map['key'] verwendet werden, ansonsten reicht die Objekt-Syntax map.key
+	def mapIndexer(path, next) {
+	    return next.matches("^[A-Za-z_][A-Za-z0-9_]*\$")
+	        ? "$path.$next"
+	        : "$path['$next']"
+	}
+
+	def createJsonPathContentAssertion(step, path, value) {
+	    def name = "$path = $value"
+	
+	    if(step.getAssertionByName(name) == null) {
+	        log.debug("Erstelle $name")
+	
+	        def assertion = step.addAssertion("JsonPath Match")
+	        assertion.name = name
+	        assertion.path = path
+	        assertion.expectedContent = value != null ? value : "null"
+	    } else {
+	        log.info("Überspringe $name, da sie bereits existiert")
+	    }
+	}
+}
+
+context.assertions = new AssertionUtilities(log, context, testRunner)</script>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="bdac02ca-e7bc-40bb-ba26-e8374a8b0319" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="/repos" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Henkoglobin/lazylualinq" id="5e05dba1-d6bc-4970-9f54-d5259989698e">
+        <con:settings/>
+        <con:config service="https://api.github.com" resourcePath="/repos/{owner}/{repo}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Henkoglobin/lazylualinq" id="a6b0051e-3736-4582-857f-92cc627f54c6" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://api.github.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://api.github.com/repos/Henkoglobin/</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="7ab8120e-989c-461e-898a-690fdcbaf352" name=":status = 200">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="8650d123-62c7-4c35-bafa-8faff876dd42" name="$.id = 21391034">
+              <con:configuration>
+                <path>$.id</path>
+                <content>21391034</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a38abb5b-0995-4783-b485-b2e56fbdda1e" name="$.node_id = MDEwOlJlcG9zaXRvcnkyMTM5MTAzNA==">
+              <con:configuration>
+                <path>$.node_id</path>
+                <content>MDEwOlJlcG9zaXRvcnkyMTM5MTAzNA==</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="94452b62-102a-4db6-9552-5621296cb96c" name="$.name = lazylualinq">
+              <con:configuration>
+                <path>$.name</path>
+                <content>lazylualinq</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="c5c10aa6-c410-4c91-9cab-ac8228f93ab2" name="$.full_name = Henkoglobin/lazylualinq">
+              <con:configuration>
+                <path>$.full_name</path>
+                <content>Henkoglobin/lazylualinq</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="58e32768-352b-4c69-95b5-780d28ab0937" name="$.private = false">
+              <con:configuration>
+                <path>$.private</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f2182d78-7c09-4639-be20-021d8c702798" name="$.owner.login = Henkoglobin">
+              <con:configuration>
+                <path>$.owner.login</path>
+                <content>Henkoglobin</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3bc5317a-7a0b-444b-949e-2cf47dabcaba" name="$.owner.id = 1849233">
+              <con:configuration>
+                <path>$.owner.id</path>
+                <content>1849233</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1b099fbb-5e9a-4cf1-8489-945c93d90ded" name="$.owner.node_id = MDQ6VXNlcjE4NDkyMzM=">
+              <con:configuration>
+                <path>$.owner.node_id</path>
+                <content>MDQ6VXNlcjE4NDkyMzM=</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="403e2a49-7c27-4098-b527-268156903606" name="$.owner.avatar_url = https://avatars.githubusercontent.com/u/1849233?v=4">
+              <con:configuration>
+                <path>$.owner.avatar_url</path>
+                <content>https://avatars.githubusercontent.com/u/1849233?v=4</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="2695a6a1-a97d-424c-91d9-ec2d2a39b753" name="$.owner.gravatar_id = ">
+              <con:configuration>
+                <path>$.owner.gravatar_id</path>
+                <content/>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="116c6087-440f-4065-bd77-6e375b99f464" name="$.owner.url = https://api.github.com/users/Henkoglobin">
+              <con:configuration>
+                <path>$.owner.url</path>
+                <content>https://api.github.com/users/Henkoglobin</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="78ee9595-eab7-4f74-bba4-62540052df83" name="$.owner.html_url = https://github.com/Henkoglobin">
+              <con:configuration>
+                <path>$.owner.html_url</path>
+                <content>https://github.com/Henkoglobin</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="8826d404-634b-4a08-a29f-8aa804795e5d" name="$.owner.followers_url = https://api.github.com/users/Henkoglobin/followers">
+              <con:configuration>
+                <path>$.owner.followers_url</path>
+                <content>https://api.github.com/users/Henkoglobin/followers</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="6500e272-8a9b-4e89-9b58-b82549912550" name="$.owner.following_url = https://api.github.com/users/Henkoglobin/following{/other_user}">
+              <con:configuration>
+                <path>$.owner.following_url</path>
+                <content>https://api.github.com/users/Henkoglobin/following{/other_user}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="2a20e8eb-fee0-4bfa-835c-22364b3af951" name="$.owner.gists_url = https://api.github.com/users/Henkoglobin/gists{/gist_id}">
+              <con:configuration>
+                <path>$.owner.gists_url</path>
+                <content>https://api.github.com/users/Henkoglobin/gists{/gist_id}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="b3fc89c3-ed7f-48f3-bc3c-a25f3066fecc" name="$.owner.starred_url = https://api.github.com/users/Henkoglobin/starred{/owner}{/repo}">
+              <con:configuration>
+                <path>$.owner.starred_url</path>
+                <content>https://api.github.com/users/Henkoglobin/starred{/owner}{/repo}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="2b452df1-5999-4d3c-a27b-1017a2eb5134" name="$.owner.subscriptions_url = https://api.github.com/users/Henkoglobin/subscriptions">
+              <con:configuration>
+                <path>$.owner.subscriptions_url</path>
+                <content>https://api.github.com/users/Henkoglobin/subscriptions</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3caeed00-6d01-40ea-8232-21253b0fdfdd" name="$.owner.organizations_url = https://api.github.com/users/Henkoglobin/orgs">
+              <con:configuration>
+                <path>$.owner.organizations_url</path>
+                <content>https://api.github.com/users/Henkoglobin/orgs</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="29c24a7a-a015-40e0-833f-67ef0a2d26d3" name="$.owner.repos_url = https://api.github.com/users/Henkoglobin/repos">
+              <con:configuration>
+                <path>$.owner.repos_url</path>
+                <content>https://api.github.com/users/Henkoglobin/repos</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="8db29fe0-4f40-4d6a-8297-c368b24d6447" name="$.owner.events_url = https://api.github.com/users/Henkoglobin/events{/privacy}">
+              <con:configuration>
+                <path>$.owner.events_url</path>
+                <content>https://api.github.com/users/Henkoglobin/events{/privacy}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="7792cbbf-ca21-4bec-a2c7-fa11c7ac63bb" name="$.owner.received_events_url = https://api.github.com/users/Henkoglobin/received_events">
+              <con:configuration>
+                <path>$.owner.received_events_url</path>
+                <content>https://api.github.com/users/Henkoglobin/received_events</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="b0e8b781-c16d-412b-bae7-9efd0283908a" name="$.owner.type = User">
+              <con:configuration>
+                <path>$.owner.type</path>
+                <content>User</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="0ff195ed-8d67-49db-8add-cb457966af5e" name="$.owner.site_admin = false">
+              <con:configuration>
+                <path>$.owner.site_admin</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="73156c6b-8e85-4229-836b-33a1a53401ab" name="$.html_url = https://github.com/Henkoglobin/lazylualinq">
+              <con:configuration>
+                <path>$.html_url</path>
+                <content>https://github.com/Henkoglobin/lazylualinq</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="44591635-873c-4184-bf66-5f4fc3575652" name="$.description = linq-like functions for Lua">
+              <con:configuration>
+                <path>$.description</path>
+                <content>linq-like functions for Lua</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="75b4060f-60bd-45b3-afb3-4405c8c52d06" name="$.fork = false">
+              <con:configuration>
+                <path>$.fork</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="6a4332c9-4ad7-4f1b-a911-c954ab30d27a" name="$.url = https://api.github.com/repos/Henkoglobin/lazylualinq">
+              <con:configuration>
+                <path>$.url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f664047f-30d3-4690-9027-d97ed6451995" name="$.forks_url = https://api.github.com/repos/Henkoglobin/lazylualinq/forks">
+              <con:configuration>
+                <path>$.forks_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/forks</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f3d3ac2c-4fc6-4224-b658-a6406c4c95bf" name="$.keys_url = https://api.github.com/repos/Henkoglobin/lazylualinq/keys{/key_id}">
+              <con:configuration>
+                <path>$.keys_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/keys{/key_id}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="75473a68-112c-4781-a3d1-0715b592699c" name="$.collaborators_url = https://api.github.com/repos/Henkoglobin/lazylualinq/collaborators{/collaborator}">
+              <con:configuration>
+                <path>$.collaborators_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/collaborators{/collaborator}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="9521bfe6-6abe-453f-8baf-795940c88de8" name="$.teams_url = https://api.github.com/repos/Henkoglobin/lazylualinq/teams">
+              <con:configuration>
+                <path>$.teams_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/teams</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3410ac3a-a955-4941-943e-a6f23211adbb" name="$.hooks_url = https://api.github.com/repos/Henkoglobin/lazylualinq/hooks">
+              <con:configuration>
+                <path>$.hooks_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/hooks</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="37a181fa-8855-473c-9499-d02a6aa01d08" name="$.issue_events_url = https://api.github.com/repos/Henkoglobin/lazylualinq/issues/events{/number}">
+              <con:configuration>
+                <path>$.issue_events_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/issues/events{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3f533d77-975e-422e-8c4e-a6e37bbeb032" name="$.events_url = https://api.github.com/repos/Henkoglobin/lazylualinq/events">
+              <con:configuration>
+                <path>$.events_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/events</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a279a45f-125c-492f-9c5d-f9e5564adc50" name="$.assignees_url = https://api.github.com/repos/Henkoglobin/lazylualinq/assignees{/user}">
+              <con:configuration>
+                <path>$.assignees_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/assignees{/user}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="c29a87c8-6ed0-4c5e-b768-358e9f68cd43" name="$.branches_url = https://api.github.com/repos/Henkoglobin/lazylualinq/branches{/branch}">
+              <con:configuration>
+                <path>$.branches_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/branches{/branch}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="03885e2d-25f6-4bf9-974f-9d32e1969aaa" name="$.tags_url = https://api.github.com/repos/Henkoglobin/lazylualinq/tags">
+              <con:configuration>
+                <path>$.tags_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/tags</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="c3247ea6-346d-461f-a81f-df9e386c6c19" name="$.blobs_url = https://api.github.com/repos/Henkoglobin/lazylualinq/git/blobs{/sha}">
+              <con:configuration>
+                <path>$.blobs_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/git/blobs{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="0f451674-5a29-4731-a3e7-c794a91fca86" name="$.git_tags_url = https://api.github.com/repos/Henkoglobin/lazylualinq/git/tags{/sha}">
+              <con:configuration>
+                <path>$.git_tags_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/git/tags{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="6c86df0d-dc3d-4b14-8374-44e8a9d5e221" name="$.git_refs_url = https://api.github.com/repos/Henkoglobin/lazylualinq/git/refs{/sha}">
+              <con:configuration>
+                <path>$.git_refs_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/git/refs{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1edae159-1bd9-4760-9928-3bc3375860ee" name="$.trees_url = https://api.github.com/repos/Henkoglobin/lazylualinq/git/trees{/sha}">
+              <con:configuration>
+                <path>$.trees_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/git/trees{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="377fae58-1546-4934-9eb3-a32103d2ebf3" name="$.statuses_url = https://api.github.com/repos/Henkoglobin/lazylualinq/statuses/{sha}">
+              <con:configuration>
+                <path>$.statuses_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/statuses/{sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="5c681c2d-c8c6-4525-b88f-3d4128e42412" name="$.languages_url = https://api.github.com/repos/Henkoglobin/lazylualinq/languages">
+              <con:configuration>
+                <path>$.languages_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/languages</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="fe8f03c9-015c-45de-89a5-dad04d55ea79" name="$.stargazers_url = https://api.github.com/repos/Henkoglobin/lazylualinq/stargazers">
+              <con:configuration>
+                <path>$.stargazers_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/stargazers</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="fcdcc4a3-302e-42a5-bd69-dc558728e0ae" name="$.contributors_url = https://api.github.com/repos/Henkoglobin/lazylualinq/contributors">
+              <con:configuration>
+                <path>$.contributors_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/contributors</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="0bf232cf-cd95-4a44-88d2-fc31a4ae1da7" name="$.subscribers_url = https://api.github.com/repos/Henkoglobin/lazylualinq/subscribers">
+              <con:configuration>
+                <path>$.subscribers_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/subscribers</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f714e50e-3e35-42cf-b6df-5eaf45e42ae7" name="$.subscription_url = https://api.github.com/repos/Henkoglobin/lazylualinq/subscription">
+              <con:configuration>
+                <path>$.subscription_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/subscription</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="64cdcdd9-4962-45cf-8fdf-bc536569f6c3" name="$.commits_url = https://api.github.com/repos/Henkoglobin/lazylualinq/commits{/sha}">
+              <con:configuration>
+                <path>$.commits_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/commits{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3f899734-a2c1-461c-a073-7a07e03b6e70" name="$.git_commits_url = https://api.github.com/repos/Henkoglobin/lazylualinq/git/commits{/sha}">
+              <con:configuration>
+                <path>$.git_commits_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/git/commits{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="77d4823d-7107-4add-b548-0cded49603c7" name="$.comments_url = https://api.github.com/repos/Henkoglobin/lazylualinq/comments{/number}">
+              <con:configuration>
+                <path>$.comments_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/comments{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="d4adff44-83c3-4458-af79-66a137e0aba0" name="$.issue_comment_url = https://api.github.com/repos/Henkoglobin/lazylualinq/issues/comments{/number}">
+              <con:configuration>
+                <path>$.issue_comment_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/issues/comments{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="99117d2f-8247-4a98-94f6-98c841ea160e" name="$.contents_url = https://api.github.com/repos/Henkoglobin/lazylualinq/contents/{+path}">
+              <con:configuration>
+                <path>$.contents_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/contents/{+path}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e2255202-70f1-4904-ba87-0e38c3b428e9" name="$.compare_url = https://api.github.com/repos/Henkoglobin/lazylualinq/compare/{base}...{head}">
+              <con:configuration>
+                <path>$.compare_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/compare/{base}...{head}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e7411917-bcad-4baa-a14c-4819334aa091" name="$.merges_url = https://api.github.com/repos/Henkoglobin/lazylualinq/merges">
+              <con:configuration>
+                <path>$.merges_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/merges</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e9743903-feca-4e21-bea7-e5c312c7d95f" name="$.archive_url = https://api.github.com/repos/Henkoglobin/lazylualinq/{archive_format}{/ref}">
+              <con:configuration>
+                <path>$.archive_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/{archive_format}{/ref}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="d156d13a-b4f9-4029-bcff-f8c02f9b4f93" name="$.downloads_url = https://api.github.com/repos/Henkoglobin/lazylualinq/downloads">
+              <con:configuration>
+                <path>$.downloads_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/downloads</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="bd4254c2-e95c-49bd-83f2-e8e1ad4c12c7" name="$.issues_url = https://api.github.com/repos/Henkoglobin/lazylualinq/issues{/number}">
+              <con:configuration>
+                <path>$.issues_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/issues{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ff2e6a6b-6225-46dd-9edb-4583e080a7d9" name="$.pulls_url = https://api.github.com/repos/Henkoglobin/lazylualinq/pulls{/number}">
+              <con:configuration>
+                <path>$.pulls_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/pulls{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1d08768c-1e35-4f9d-8a14-ee9cb3b8684f" name="$.milestones_url = https://api.github.com/repos/Henkoglobin/lazylualinq/milestones{/number}">
+              <con:configuration>
+                <path>$.milestones_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/milestones{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="4de0a17d-fa73-45c1-adb5-7a099e2ad9bf" name="$.notifications_url = https://api.github.com/repos/Henkoglobin/lazylualinq/notifications{?since,all,participating}">
+              <con:configuration>
+                <path>$.notifications_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/notifications{?since,all,participating}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3c9d35ab-bcdd-4a3d-9ff5-9b99b21bb32e" name="$.labels_url = https://api.github.com/repos/Henkoglobin/lazylualinq/labels{/name}">
+              <con:configuration>
+                <path>$.labels_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/labels{/name}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a267c212-f6fa-4f69-9763-fbb5f0eeccce" name="$.releases_url = https://api.github.com/repos/Henkoglobin/lazylualinq/releases{/id}">
+              <con:configuration>
+                <path>$.releases_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/releases{/id}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="411d96d4-4ccd-4a64-b5d7-43ade5beed6f" name="$.deployments_url = https://api.github.com/repos/Henkoglobin/lazylualinq/deployments">
+              <con:configuration>
+                <path>$.deployments_url</path>
+                <content>https://api.github.com/repos/Henkoglobin/lazylualinq/deployments</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="7baecf6d-00b1-4a9f-a391-9a4af63e4f3e" name="$.created_at = 2014-07-01T14:37:53Z">
+              <con:configuration>
+                <path>$.created_at</path>
+                <content>2014-07-01T14:37:53Z</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e872195e-1140-43f2-a415-a55aebebfa91" name="$.updated_at = 2021-12-29T08:28:41Z">
+              <con:configuration>
+                <path>$.updated_at</path>
+                <content>2021-12-29T08:28:41Z</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="cf759887-6acf-45f5-9e7d-af4d11f91a10" name="$.pushed_at = 2021-12-08T11:36:04Z">
+              <con:configuration>
+                <path>$.pushed_at</path>
+                <content>2021-12-08T11:36:04Z</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="4c9df6da-af6f-4fc5-b85e-34172e73f1db" name="$.git_url = git://github.com/Henkoglobin/lazylualinq.git">
+              <con:configuration>
+                <path>$.git_url</path>
+                <content>git://github.com/Henkoglobin/lazylualinq.git</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e007b057-69fb-474c-b99a-85f2936d6332" name="$.ssh_url = git@github.com:Henkoglobin/lazylualinq.git">
+              <con:configuration>
+                <path>$.ssh_url</path>
+                <content>git@github.com:Henkoglobin/lazylualinq.git</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="da6b8838-2ba9-4365-8194-b120ec480a10" name="$.clone_url = https://github.com/Henkoglobin/lazylualinq.git">
+              <con:configuration>
+                <path>$.clone_url</path>
+                <content>https://github.com/Henkoglobin/lazylualinq.git</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1122efdb-11b1-4da2-8e59-659009252167" name="$.svn_url = https://github.com/Henkoglobin/lazylualinq">
+              <con:configuration>
+                <path>$.svn_url</path>
+                <content>https://github.com/Henkoglobin/lazylualinq</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f04516a8-7b92-42f8-9657-d043ad3f9273" name="$.homepage = ">
+              <con:configuration>
+                <path>$.homepage</path>
+                <content/>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ed301f92-13e7-4a61-b504-cfc0b267f30d" name="$.size = 105">
+              <con:configuration>
+                <path>$.size</path>
+                <content>105</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="5c5e1cfe-bea7-417c-b277-1a8294e350aa" name="$.stargazers_count = 7">
+              <con:configuration>
+                <path>$.stargazers_count</path>
+                <content>7</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ada2eb50-54eb-41d6-bb33-f26b2d2a44f3" name="$.watchers_count = 7">
+              <con:configuration>
+                <path>$.watchers_count</path>
+                <content>7</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1b2617a6-61fb-4bc9-b58b-dfcf8ec61453" name="$.language = Lua">
+              <con:configuration>
+                <path>$.language</path>
+                <content>Lua</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="0503a06f-7666-46c4-beb7-1e4bd1546130" name="$.has_issues = true">
+              <con:configuration>
+                <path>$.has_issues</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="0db30d68-2357-419a-921d-408302e08572" name="$.has_projects = true">
+              <con:configuration>
+                <path>$.has_projects</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="87e23666-8d09-4031-842d-7dd9f1e6b336" name="$.has_downloads = true">
+              <con:configuration>
+                <path>$.has_downloads</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="7cd955a7-5dbb-4613-97cf-8ca38e381761" name="$.has_wiki = true">
+              <con:configuration>
+                <path>$.has_wiki</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3f698027-349e-4eb1-b9fe-9ff328cfff3a" name="$.has_pages = true">
+              <con:configuration>
+                <path>$.has_pages</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f52e61bb-d9fb-4a8d-bd43-9aea75ec3f14" name="$.forks_count = 3">
+              <con:configuration>
+                <path>$.forks_count</path>
+                <content>3</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="0806368f-a715-470e-961a-0885b2095f0b" name="$.mirror_url = null">
+              <con:configuration>
+                <path>$.mirror_url</path>
+                <content>null</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="64821971-7fdc-4d4b-bce5-65505c2e79ef" name="$.archived = false">
+              <con:configuration>
+                <path>$.archived</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="fb97b103-8b40-4893-b2cb-7baa2243bc68" name="$.disabled = false">
+              <con:configuration>
+                <path>$.disabled</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="7511549e-3e93-474d-adb3-b31268a408f1" name="$.open_issues_count = 2">
+              <con:configuration>
+                <path>$.open_issues_count</path>
+                <content>2</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="cb73fbbc-d9d2-4e33-9501-8cf8381abe6f" name="$.license.key = unlicense">
+              <con:configuration>
+                <path>$.license.key</path>
+                <content>unlicense</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="852e5c8e-94cc-4b91-97d1-0b4cd06eb267" name="$.license.name = The Unlicense">
+              <con:configuration>
+                <path>$.license.name</path>
+                <content>The Unlicense</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="5968901f-f6ca-4748-a586-cf56d9a579ad" name="$.license.spdx_id = Unlicense">
+              <con:configuration>
+                <path>$.license.spdx_id</path>
+                <content>Unlicense</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="51775a1c-95e8-4408-bbc0-18f0b28a7304" name="$.license.url = https://api.github.com/licenses/unlicense">
+              <con:configuration>
+                <path>$.license.url</path>
+                <content>https://api.github.com/licenses/unlicense</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="9db0ea31-00f8-4a15-8881-6302c447721f" name="$.license.node_id = MDc6TGljZW5zZTE1">
+              <con:configuration>
+                <path>$.license.node_id</path>
+                <content>MDc6TGljZW5zZTE1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="d43bf573-f72c-4ba7-b590-1356784d3584" name="$.allow_forking = true">
+              <con:configuration>
+                <path>$.allow_forking</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="5b045fd1-fd88-4ada-9e93-5fe6f4c5db76" name="$.is_template = false">
+              <con:configuration>
+                <path>$.is_template</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="63b0ed94-06a9-4980-ba69-9cd26eb73f80" name="$.visibility = public">
+              <con:configuration>
+                <path>$.visibility</path>
+                <content>public</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="0ee1b9d5-513e-4f4b-b745-d63ac60d8f5c" name="$.forks = 3">
+              <con:configuration>
+                <path>$.forks</path>
+                <content>3</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="c5093da6-1e4d-4608-b5ef-4a6322f28278" name="$.open_issues = 2">
+              <con:configuration>
+                <path>$.open_issues</path>
+                <content>2</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f8468f00-5ba6-44a6-8bfc-dfd81365afc9" name="$.watchers = 7">
+              <con:configuration>
+                <path>$.watchers</path>
+                <content>7</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ce747953-3804-4abf-839b-4187b04256ff" name="$.default_branch = main">
+              <con:configuration>
+                <path>$.default_branch</path>
+                <content>main</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="6469021d-5c56-4fd1-b062-cee5e54cf06f" name="$.temp_clone_token = null">
+              <con:configuration>
+                <path>$.temp_clone_token</path>
+                <content>null</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="532c7a26-d65a-4172-b28e-e304d2bf1774" name="$.network_count = 3">
+              <con:configuration>
+                <path>$.network_count</path>
+                <content>3</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="98450d34-46a7-4e31-bd05-376cc4f742f4" name="$.subscribers_count = 2">
+              <con:configuration>
+                <path>$.subscribers_count</path>
+                <content>2</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="owner" value="Henkoglobin"/>
+              <con:entry key="repo" value="lazylualinq"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="aclue-de/FrontendWorkshop" id="bb9c3048-6210-49e3-bce1-e609028e81bf">
+        <con:settings/>
+        <con:config service="https://api.github.com" resourcePath="/repos/{owner}/{repo}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="aclue-de/FrontendWorkshop" id="a6b0051e-3736-4582-857f-92cc627f54c6" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://api.github.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://api.github.com/repos/Henkoglobin/</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="c5a7485b-c51f-4ad9-b183-b62aa5b5c407" name=":status = 200">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3595e7cd-a45a-45af-b405-d8816733a2cf" name="$.id = 420096227">
+              <con:configuration>
+                <path>$.id</path>
+                <content>420096227</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="84a66873-4ad4-4ca6-9aa3-9ad63d8eae84" name="$.node_id = R_kgDOGQoo4w">
+              <con:configuration>
+                <path>$.node_id</path>
+                <content>R_kgDOGQoo4w</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="6fe03204-3127-4813-be62-b84d727d47c0" name="$.name = FrontendWorkshop">
+              <con:configuration>
+                <path>$.name</path>
+                <content>FrontendWorkshop</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f5b1b2b6-e5fd-4216-8d37-1163ca0cc038" name="$.full_name = aclue-de/FrontendWorkshop">
+              <con:configuration>
+                <path>$.full_name</path>
+                <content>aclue-de/FrontendWorkshop</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="4df9c7f5-4e40-4ddf-9e01-bfc09cc32c89" name="$.private = false">
+              <con:configuration>
+                <path>$.private</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1d9ebf83-a004-406b-b641-7fd8cacc105c" name="$.owner.login = aclue-de">
+              <con:configuration>
+                <path>$.owner.login</path>
+                <content>aclue-de</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="9f70adfb-14db-4cb2-9fea-037b4c5275a5" name="$.owner.id = 70021833">
+              <con:configuration>
+                <path>$.owner.id</path>
+                <content>70021833</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="d1c4e4fe-cbde-4c1a-8c20-59c1070b23ab" name="$.owner.node_id = MDEyOk9yZ2FuaXphdGlvbjcwMDIxODMz">
+              <con:configuration>
+                <path>$.owner.node_id</path>
+                <content>MDEyOk9yZ2FuaXphdGlvbjcwMDIxODMz</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e70ff1f0-7cca-4800-b70f-6579837122ba" name="$.owner.avatar_url = https://avatars.githubusercontent.com/u/70021833?v=4">
+              <con:configuration>
+                <path>$.owner.avatar_url</path>
+                <content>https://avatars.githubusercontent.com/u/70021833?v=4</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="282c8920-65ec-4697-a5e6-6dba3bb800d5" name="$.owner.gravatar_id = ">
+              <con:configuration>
+                <path>$.owner.gravatar_id</path>
+                <content/>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="c466a28a-5610-4ea1-a351-b56c3a6611fd" name="$.owner.url = https://api.github.com/users/aclue-de">
+              <con:configuration>
+                <path>$.owner.url</path>
+                <content>https://api.github.com/users/aclue-de</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f4c25cc0-375b-4dce-88a9-fabf769e3999" name="$.owner.html_url = https://github.com/aclue-de">
+              <con:configuration>
+                <path>$.owner.html_url</path>
+                <content>https://github.com/aclue-de</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="142d00bc-161f-49cb-8584-178b39596eca" name="$.owner.followers_url = https://api.github.com/users/aclue-de/followers">
+              <con:configuration>
+                <path>$.owner.followers_url</path>
+                <content>https://api.github.com/users/aclue-de/followers</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="d7dfc43c-ab95-43d0-b2a6-a415b1809633" name="$.owner.following_url = https://api.github.com/users/aclue-de/following{/other_user}">
+              <con:configuration>
+                <path>$.owner.following_url</path>
+                <content>https://api.github.com/users/aclue-de/following{/other_user}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3790bdf9-1951-4248-b3e0-76bf9ce18782" name="$.owner.gists_url = https://api.github.com/users/aclue-de/gists{/gist_id}">
+              <con:configuration>
+                <path>$.owner.gists_url</path>
+                <content>https://api.github.com/users/aclue-de/gists{/gist_id}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e6f5a391-0327-4bc6-b408-e7eb5314d06c" name="$.owner.starred_url = https://api.github.com/users/aclue-de/starred{/owner}{/repo}">
+              <con:configuration>
+                <path>$.owner.starred_url</path>
+                <content>https://api.github.com/users/aclue-de/starred{/owner}{/repo}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="838e7207-24bc-4b14-9960-446ff9c0873d" name="$.owner.subscriptions_url = https://api.github.com/users/aclue-de/subscriptions">
+              <con:configuration>
+                <path>$.owner.subscriptions_url</path>
+                <content>https://api.github.com/users/aclue-de/subscriptions</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="41b133a2-5eeb-41a0-9c04-f743fa4d76d6" name="$.owner.organizations_url = https://api.github.com/users/aclue-de/orgs">
+              <con:configuration>
+                <path>$.owner.organizations_url</path>
+                <content>https://api.github.com/users/aclue-de/orgs</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ae5edd05-1278-4b55-8a75-c81cb3e42700" name="$.owner.repos_url = https://api.github.com/users/aclue-de/repos">
+              <con:configuration>
+                <path>$.owner.repos_url</path>
+                <content>https://api.github.com/users/aclue-de/repos</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="60cecc91-a60c-4850-9b8d-c7ea69f571d3" name="$.owner.events_url = https://api.github.com/users/aclue-de/events{/privacy}">
+              <con:configuration>
+                <path>$.owner.events_url</path>
+                <content>https://api.github.com/users/aclue-de/events{/privacy}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ed7d5696-0cca-419c-8362-1d6077144b9b" name="$.owner.received_events_url = https://api.github.com/users/aclue-de/received_events">
+              <con:configuration>
+                <path>$.owner.received_events_url</path>
+                <content>https://api.github.com/users/aclue-de/received_events</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a789af26-7543-4b38-8adf-06e5ea8f2e12" name="$.owner.type = Organization">
+              <con:configuration>
+                <path>$.owner.type</path>
+                <content>Organization</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="eabcaa22-0483-48b9-b1e3-7d3513bbd479" name="$.owner.site_admin = false">
+              <con:configuration>
+                <path>$.owner.site_admin</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="92576e18-41eb-40de-afa9-8da91eea9a69" name="$.html_url = https://github.com/aclue-de/FrontendWorkshop">
+              <con:configuration>
+                <path>$.html_url</path>
+                <content>https://github.com/aclue-de/FrontendWorkshop</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1d2d62f8-dd33-4af7-bd63-0a587c94d958" name="$.description = Aclue Frontend Workshop">
+              <con:configuration>
+                <path>$.description</path>
+                <content>Aclue Frontend Workshop</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e130e1bf-8f0b-4743-89f2-8efe00d04817" name="$.fork = false">
+              <con:configuration>
+                <path>$.fork</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3eb46d3e-95b7-43c1-95cd-7701bbd825e1" name="$.url = https://api.github.com/repos/aclue-de/FrontendWorkshop">
+              <con:configuration>
+                <path>$.url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3cfc8cf7-ce0f-4d65-9da9-4d82919f3611" name="$.forks_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/forks">
+              <con:configuration>
+                <path>$.forks_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/forks</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f3da2a74-bec6-4953-a318-dc3a6055bc73" name="$.keys_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/keys{/key_id}">
+              <con:configuration>
+                <path>$.keys_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/keys{/key_id}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ebcc6bb3-6650-4b7e-b9d3-abc5dd256afc" name="$.collaborators_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/collaborators{/collaborator}">
+              <con:configuration>
+                <path>$.collaborators_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/collaborators{/collaborator}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1ff7c699-c6f2-49aa-820d-c5a4af511365" name="$.teams_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/teams">
+              <con:configuration>
+                <path>$.teams_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/teams</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="b9b81ef5-2495-47a0-a281-fddc3a7734e3" name="$.hooks_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/hooks">
+              <con:configuration>
+                <path>$.hooks_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/hooks</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="70aa2562-b9cd-48f1-bfc0-d3513e145f26" name="$.issue_events_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/issues/events{/number}">
+              <con:configuration>
+                <path>$.issue_events_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/issues/events{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f0c829b8-40df-437f-b1af-3602c2aa79b3" name="$.events_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/events">
+              <con:configuration>
+                <path>$.events_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/events</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="d1cb6464-2a95-43d5-879a-541bc4abd011" name="$.assignees_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/assignees{/user}">
+              <con:configuration>
+                <path>$.assignees_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/assignees{/user}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="53d311cf-95bf-4427-8861-2c736bf87a9b" name="$.branches_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/branches{/branch}">
+              <con:configuration>
+                <path>$.branches_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/branches{/branch}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="2df36014-1aff-440d-8c98-fae79efc312a" name="$.tags_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/tags">
+              <con:configuration>
+                <path>$.tags_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/tags</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="69c0ac2b-c8be-4827-9dc8-0fa9a05e5899" name="$.blobs_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/git/blobs{/sha}">
+              <con:configuration>
+                <path>$.blobs_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/git/blobs{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="550d90f2-7d6d-4350-a6f7-37517d55a74d" name="$.git_tags_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/git/tags{/sha}">
+              <con:configuration>
+                <path>$.git_tags_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/git/tags{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="d93a4ec4-2647-447b-bca1-d53443387c51" name="$.git_refs_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/git/refs{/sha}">
+              <con:configuration>
+                <path>$.git_refs_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/git/refs{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="adeb4147-8d7d-4478-8214-ef66d131fd54" name="$.trees_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/git/trees{/sha}">
+              <con:configuration>
+                <path>$.trees_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/git/trees{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="9ec33280-7613-471c-b304-8d3c0e26ae08" name="$.statuses_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/statuses/{sha}">
+              <con:configuration>
+                <path>$.statuses_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/statuses/{sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="cd9f0ca4-bf57-4793-8bda-d1b9baa76705" name="$.languages_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/languages">
+              <con:configuration>
+                <path>$.languages_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/languages</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="37eabf91-4435-4f05-b602-a4a311c68036" name="$.stargazers_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/stargazers">
+              <con:configuration>
+                <path>$.stargazers_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/stargazers</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="550e40e3-f7e5-473e-9139-139d28ba7692" name="$.contributors_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/contributors">
+              <con:configuration>
+                <path>$.contributors_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/contributors</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="0ea4f634-6982-4846-9a20-5d3a515cf812" name="$.subscribers_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/subscribers">
+              <con:configuration>
+                <path>$.subscribers_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/subscribers</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="3437ece2-ba06-4646-9e27-7f3b6917667f" name="$.subscription_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/subscription">
+              <con:configuration>
+                <path>$.subscription_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/subscription</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="2ea5ce8f-9d2d-4316-8f97-7ace9bfaf3cd" name="$.commits_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/commits{/sha}">
+              <con:configuration>
+                <path>$.commits_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/commits{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ea7c6bef-254e-4fee-8a2f-c1022a67e7a9" name="$.git_commits_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/git/commits{/sha}">
+              <con:configuration>
+                <path>$.git_commits_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/git/commits{/sha}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="71c70dc1-283e-45f2-baef-d916477b43db" name="$.comments_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/comments{/number}">
+              <con:configuration>
+                <path>$.comments_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/comments{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="444fc641-cedd-4b73-b7dd-7ce2a5046b97" name="$.issue_comment_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/issues/comments{/number}">
+              <con:configuration>
+                <path>$.issue_comment_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/issues/comments{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="b7b9b776-5813-475f-abba-0586d9e3a691" name="$.contents_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/contents/{+path}">
+              <con:configuration>
+                <path>$.contents_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/contents/{+path}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="89bc6c52-bb5f-49a4-90b2-6cc4b913d336" name="$.compare_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/compare/{base}...{head}">
+              <con:configuration>
+                <path>$.compare_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/compare/{base}...{head}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a31285ce-b318-440d-8c7d-a9e413d4538e" name="$.merges_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/merges">
+              <con:configuration>
+                <path>$.merges_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/merges</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="6f964888-902c-45df-940f-ae2a5315d471" name="$.archive_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/{archive_format}{/ref}">
+              <con:configuration>
+                <path>$.archive_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/{archive_format}{/ref}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="8a0dca9f-600f-4b6c-9a75-a3378adff7de" name="$.downloads_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/downloads">
+              <con:configuration>
+                <path>$.downloads_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/downloads</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="6a8c7632-143e-466c-936c-a8088deacdac" name="$.issues_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/issues{/number}">
+              <con:configuration>
+                <path>$.issues_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/issues{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="dae374d1-ecc5-408c-a1f4-a6f8bcbd2817" name="$.pulls_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/pulls{/number}">
+              <con:configuration>
+                <path>$.pulls_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/pulls{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="fd99f36f-adcc-499d-970c-de941c53126b" name="$.milestones_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/milestones{/number}">
+              <con:configuration>
+                <path>$.milestones_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/milestones{/number}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="c09b4a70-170b-4d41-8d6a-f45939862d4b" name="$.notifications_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/notifications{?since,all,participating}">
+              <con:configuration>
+                <path>$.notifications_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/notifications{?since,all,participating}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="99a77a45-61bc-406c-988c-397631c8e90d" name="$.labels_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/labels{/name}">
+              <con:configuration>
+                <path>$.labels_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/labels{/name}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="b5889d80-be57-4cd3-a2bb-9af4aa7cb88f" name="$.releases_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/releases{/id}">
+              <con:configuration>
+                <path>$.releases_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/releases{/id}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="702ac129-e881-48c4-9949-f35d14bacc35" name="$.deployments_url = https://api.github.com/repos/aclue-de/FrontendWorkshop/deployments">
+              <con:configuration>
+                <path>$.deployments_url</path>
+                <content>https://api.github.com/repos/aclue-de/FrontendWorkshop/deployments</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="27296ad1-12b6-4989-ba02-430b7cd23472" name="$.created_at = 2021-10-22T12:48:29Z">
+              <con:configuration>
+                <path>$.created_at</path>
+                <content>2021-10-22T12:48:29Z</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="2e272564-001c-451f-b0d4-df8ba069c55c" name="$.updated_at = 2021-11-06T10:18:23Z">
+              <con:configuration>
+                <path>$.updated_at</path>
+                <content>2021-11-06T10:18:23Z</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="4d332c4e-83d4-44bc-bcdc-97ba43501558" name="$.pushed_at = 2021-11-06T10:18:20Z">
+              <con:configuration>
+                <path>$.pushed_at</path>
+                <content>2021-11-06T10:18:20Z</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="75300fed-b410-4674-a2a3-16bf787ab528" name="$.git_url = git://github.com/aclue-de/FrontendWorkshop.git">
+              <con:configuration>
+                <path>$.git_url</path>
+                <content>git://github.com/aclue-de/FrontendWorkshop.git</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="198be25d-58f7-4ada-9808-04a59545efe0" name="$.ssh_url = git@github.com:aclue-de/FrontendWorkshop.git">
+              <con:configuration>
+                <path>$.ssh_url</path>
+                <content>git@github.com:aclue-de/FrontendWorkshop.git</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e8a359ed-f915-40f7-8497-682bfc4d3d23" name="$.clone_url = https://github.com/aclue-de/FrontendWorkshop.git">
+              <con:configuration>
+                <path>$.clone_url</path>
+                <content>https://github.com/aclue-de/FrontendWorkshop.git</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="192b1bac-4479-42ab-aafd-2d463752bcbb" name="$.svn_url = https://github.com/aclue-de/FrontendWorkshop">
+              <con:configuration>
+                <path>$.svn_url</path>
+                <content>https://github.com/aclue-de/FrontendWorkshop</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="5f08ef89-7e5f-404d-85f0-4ed7e07b84dc" name="$.homepage = null">
+              <con:configuration>
+                <path>$.homepage</path>
+                <content>null</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="733d70f0-ccf8-4631-916b-5c8b9bf85511" name="$.size = 223">
+              <con:configuration>
+                <path>$.size</path>
+                <content>223</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="4628949e-7a37-408e-8e32-092da351f4ce" name="$.stargazers_count = 0">
+              <con:configuration>
+                <path>$.stargazers_count</path>
+                <content>0</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1a2f96da-96e4-4dc0-b6cb-89e0ff687bd1" name="$.watchers_count = 0">
+              <con:configuration>
+                <path>$.watchers_count</path>
+                <content>0</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="af0085ad-83c2-483b-9bc5-1772d12edd61" name="$.language = null">
+              <con:configuration>
+                <path>$.language</path>
+                <content>null</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a9d4d25b-3f45-46a2-881e-8aa9811c7352" name="$.has_issues = true">
+              <con:configuration>
+                <path>$.has_issues</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="c9292617-a8c3-475a-9bac-1827c8fdfbdd" name="$.has_projects = true">
+              <con:configuration>
+                <path>$.has_projects</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="8df5086b-70d5-4e58-8ecd-1e400b53a7c1" name="$.has_downloads = true">
+              <con:configuration>
+                <path>$.has_downloads</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="eaa54a72-b656-4afe-9932-d3a6d1863aa0" name="$.has_wiki = true">
+              <con:configuration>
+                <path>$.has_wiki</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="2e8f2213-1473-47e5-a282-7ab785064183" name="$.has_pages = false">
+              <con:configuration>
+                <path>$.has_pages</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="d5e004eb-a94b-4faf-88cc-61d4512eb862" name="$.forks_count = 0">
+              <con:configuration>
+                <path>$.forks_count</path>
+                <content>0</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a4839fe1-da68-4db0-9bb2-bff597a203c0" name="$.mirror_url = null">
+              <con:configuration>
+                <path>$.mirror_url</path>
+                <content>null</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="02d7281f-db19-4658-b841-00bb599df390" name="$.archived = false">
+              <con:configuration>
+                <path>$.archived</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1be3e242-131a-4b06-8c27-31424ad30f68" name="$.disabled = false">
+              <con:configuration>
+                <path>$.disabled</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="0a9991fb-dd30-4890-9abf-082c0d1a0a1a" name="$.open_issues_count = 0">
+              <con:configuration>
+                <path>$.open_issues_count</path>
+                <content>0</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="df1d6ebc-8042-4505-bb99-e0327eeaafe8" name="$.license = null">
+              <con:configuration>
+                <path>$.license</path>
+                <content>null</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="8700d875-4dab-4b5f-b023-476012979aa2" name="$.allow_forking = true">
+              <con:configuration>
+                <path>$.allow_forking</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="18d51ea2-9d63-48af-b7fd-e574a647e03b" name="$.is_template = false">
+              <con:configuration>
+                <path>$.is_template</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="a21483e4-658b-4d67-8d74-3a6bdc21159c" name="$.visibility = public">
+              <con:configuration>
+                <path>$.visibility</path>
+                <content>public</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f9875f30-63b1-45d0-a4cd-ce7210fc55a0" name="$.forks = 0">
+              <con:configuration>
+                <path>$.forks</path>
+                <content>0</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="0953dd51-1872-49bb-b3fb-649397c5ea11" name="$.open_issues = 0">
+              <con:configuration>
+                <path>$.open_issues</path>
+                <content>0</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="b59e9e4d-93ec-435f-bd4a-b16483674c95" name="$.watchers = 0">
+              <con:configuration>
+                <path>$.watchers</path>
+                <content>0</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="7c0fb721-52b3-47fa-92be-8072775dc4cd" name="$.default_branch = main">
+              <con:configuration>
+                <path>$.default_branch</path>
+                <content>main</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="67549e72-e470-46dd-98e2-164b6e006f1b" name="$.temp_clone_token = null">
+              <con:configuration>
+                <path>$.temp_clone_token</path>
+                <content>null</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="4ab69b95-7ded-40e5-a78d-8cb68441edd1" name="$.organization.login = aclue-de">
+              <con:configuration>
+                <path>$.organization.login</path>
+                <content>aclue-de</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="8f1911f0-5352-49b6-8426-1fd8adc1ab9d" name="$.organization.id = 70021833">
+              <con:configuration>
+                <path>$.organization.id</path>
+                <content>70021833</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="bcd1453a-0d57-4e83-8105-9fec0633429c" name="$.organization.node_id = MDEyOk9yZ2FuaXphdGlvbjcwMDIxODMz">
+              <con:configuration>
+                <path>$.organization.node_id</path>
+                <content>MDEyOk9yZ2FuaXphdGlvbjcwMDIxODMz</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="8de98b40-22a0-4b62-aa25-ed140d02d350" name="$.organization.avatar_url = https://avatars.githubusercontent.com/u/70021833?v=4">
+              <con:configuration>
+                <path>$.organization.avatar_url</path>
+                <content>https://avatars.githubusercontent.com/u/70021833?v=4</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="df930095-df72-4f42-9384-2e001bc96d5e" name="$.organization.gravatar_id = ">
+              <con:configuration>
+                <path>$.organization.gravatar_id</path>
+                <content/>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e93748cb-24d4-408a-8710-02d04e4aa02b" name="$.organization.url = https://api.github.com/users/aclue-de">
+              <con:configuration>
+                <path>$.organization.url</path>
+                <content>https://api.github.com/users/aclue-de</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e08fcfce-3a68-45e1-abb2-c1d693acd04b" name="$.organization.html_url = https://github.com/aclue-de">
+              <con:configuration>
+                <path>$.organization.html_url</path>
+                <content>https://github.com/aclue-de</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ed270dd8-b370-471f-ac42-c1e4df963bc1" name="$.organization.followers_url = https://api.github.com/users/aclue-de/followers">
+              <con:configuration>
+                <path>$.organization.followers_url</path>
+                <content>https://api.github.com/users/aclue-de/followers</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ad720c84-6ceb-43fd-8fe7-698f36c20184" name="$.organization.following_url = https://api.github.com/users/aclue-de/following{/other_user}">
+              <con:configuration>
+                <path>$.organization.following_url</path>
+                <content>https://api.github.com/users/aclue-de/following{/other_user}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="c65d4dd8-78c9-41d1-b5b3-b55a5ef729c9" name="$.organization.gists_url = https://api.github.com/users/aclue-de/gists{/gist_id}">
+              <con:configuration>
+                <path>$.organization.gists_url</path>
+                <content>https://api.github.com/users/aclue-de/gists{/gist_id}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="7b879df5-5dc6-47f9-ba69-ce2e2081a682" name="$.organization.starred_url = https://api.github.com/users/aclue-de/starred{/owner}{/repo}">
+              <con:configuration>
+                <path>$.organization.starred_url</path>
+                <content>https://api.github.com/users/aclue-de/starred{/owner}{/repo}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ed718c54-713f-482c-b947-0e668a2d91d1" name="$.organization.subscriptions_url = https://api.github.com/users/aclue-de/subscriptions">
+              <con:configuration>
+                <path>$.organization.subscriptions_url</path>
+                <content>https://api.github.com/users/aclue-de/subscriptions</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="2db028c1-e44e-4bda-b118-94ca67dbb85b" name="$.organization.organizations_url = https://api.github.com/users/aclue-de/orgs">
+              <con:configuration>
+                <path>$.organization.organizations_url</path>
+                <content>https://api.github.com/users/aclue-de/orgs</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="8d4ccfd6-7b50-4282-9f08-1d4b1f79d406" name="$.organization.repos_url = https://api.github.com/users/aclue-de/repos">
+              <con:configuration>
+                <path>$.organization.repos_url</path>
+                <content>https://api.github.com/users/aclue-de/repos</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="be1c98e4-08ec-4aa4-a14f-d9faa6f8df94" name="$.organization.events_url = https://api.github.com/users/aclue-de/events{/privacy}">
+              <con:configuration>
+                <path>$.organization.events_url</path>
+                <content>https://api.github.com/users/aclue-de/events{/privacy}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="ec4a1021-3231-45ac-bd11-56e896ca6640" name="$.organization.received_events_url = https://api.github.com/users/aclue-de/received_events">
+              <con:configuration>
+                <path>$.organization.received_events_url</path>
+                <content>https://api.github.com/users/aclue-de/received_events</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="5dedfcce-bee0-4d3b-b6e5-d74873e65b5b" name="$.organization.type = Organization">
+              <con:configuration>
+                <path>$.organization.type</path>
+                <content>Organization</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="9de19369-e1c7-4487-8f04-dee40772a54d" name="$.organization.site_admin = false">
+              <con:configuration>
+                <path>$.organization.site_admin</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="928fd1aa-c691-4abe-8d98-3055bd3996c0" name="$.network_count = 0">
+              <con:configuration>
+                <path>$.network_count</path>
+                <content>0</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="972f3f5f-8980-489a-8037-4328f282a096" name="$.subscribers_count = 3">
+              <con:configuration>
+                <path>$.subscribers_count</path>
+                <content>3</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="owner" value="aclue-de"/>
+              <con:entry key="repo" value="FrontendWorkshop"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Assertions generieren" id="8dbd7392-9418-4d94-9163-1a23fa269f6a" disabled="true">
+        <con:settings/>
+        <con:config>
+          <script>// https://blog.sysco.no/testing/scriptlibrary-in-soapui/
+if(context.assertions == null) {
+	testRunner.testCase.testSuite
+		.getTestCaseByName("groovy")
+		.getTestStepByName("assertions")
+		.run(testRunner, context)
+}
+
+context.assertions.createAssertionsForTestCase()</script>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:sensitiveInformation/>
+</con:soapui-project>
